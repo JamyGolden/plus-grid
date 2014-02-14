@@ -1,0 +1,26 @@
+// ==========================================================================
+// Config File
+// ==========================================================================
+
+// Horizontal Gutter
+$lg-h-gutter: 10px; // Grid padding or gutter
+$md-h-gutter: 10px; // Allows for thinner MD gutter
+$sm-h-gutter: 10px; // Allows for thinner SM gutter
+$xs-h-gutter: 10px; // Allows for thinner XS gutter
+
+// Vertical Gutter
+$lg-v-gutter: 10px; // Grid padding or gutter
+$md-v-gutter: 10px; // Allows for thinner MD gutter
+$sm-v-gutter: 10px; // Allows for thinner SM gutter
+$xs-v-gutter: 10px; // Allows for thinner XS gutter
+
+$gd-column-total: 12; // Total number columns available
+
+// Breakpoints
+// ==========================================================================
+$bp-name-list: 'xs', 'sm', 'md', 'lg';
+
+$bp-xs: 0;
+$bp-sm: 768px;
+$bp-md: 992px;
+$bp-lg: 1200px;
