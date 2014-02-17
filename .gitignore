@@ -1,14 +1,10 @@
-# Vagrant
-.vagrant
-
-# Cache
+# Temp files
 .sass-cache/
 .cache/
-
-# Dart
-*.js
 *.TMP
-*.deps
+
+# Grunt
+node_modules/
 
 # Sublime
 *.sublime-project
