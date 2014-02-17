@@ -10,333 +10,459 @@
         <link rel="stylesheet" href="css/main.css">
 
         <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
             .cols > .gd-row {
                 margin-bottom: 10px;
             }
 
             .cols > .gd-row > div {
-                background-color: #eee;
+                background-color: #ccc;
                 min-height: 20px;
             }
 
             .cell-wrap {
-                background-color: #eee;
+                background-color: #ccc;
+            }
+
+            .class-convention {
+                font-weight: 700;
+            }
+
+            .class-convention span {
+                color: #666;
+                font-weight: 400;
+            }
+
+            .class-convention span:hover {
+                color: #333;
             }
 
             @media (min-width: 768px) {
-                .cell-wrap {
-                    background-color: #eee;
+                .responsive-fluid-grid .cell-wrap {
+                    background-color: #ccc;
                     height: 200px;
                 }
             }
         </style>
     </head>
     <body>
-        <h1>Plus CSS Grid</h1>
 
-        <h2>12 column based</h2>
-        <div class="gd-row">
-            <div class="gd-xs-1-12">
-                1/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-1-12"></div>
+        <div class="container">
+            <h1>Plus CSS Grid</h1>
+
+            <h2>12 column based</h2>
+            <div class="gd-row">
+                <div class="gd-xs-1-12">
+                    1/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-1-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    1/6
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-1-6"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    2/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-2-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    1/4
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-1-4"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    3/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-3-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    4/16
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-4-16"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    1/3
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-1-3"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    4/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-4-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    5/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-5-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    1/2
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-1-2"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    6/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-6-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    8/16
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-8-16"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    7/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-7-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    8/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-8-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    2/3
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-2-3"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    9/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-9-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    3/4
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-3-4"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    10/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-10-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    5/6
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-5-6"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    1/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-10-12"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    2/2
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-2-2"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    3/3
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-3-3"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    4/4
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-4-4"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    5/5
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-5-5"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    6/6
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-6-6"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    7/7
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-7-7"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    8/8
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-8-8"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    9/9
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-9-9"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    10/10
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-10-10"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    11/11
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-11-11"></div>
+                    </div>
+                </div>
+
+                <div class="gd-xs-1-12">
+                    12/12
+                </div>
+                <div class="gd-xs-11-12 cols">
+                    <div class="gd-row">
+                        <div class="gd-sm-12-12"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="gd-xs-1-12">
-                2/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-2-12"></div>
+            <h2>Responsive and fluid</h2>
+            <p>While the grids are percentage based which makes them fluid, you can also make them responsive. For example:</p>
+
+            <div class="gd-row responsive-fluid-grid">
+                <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
+                    <div class="cell-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, quisquam, nihil, id rerum perferendis recusandae accusamus nobis obcaecati adipisci natus molestiae quas quibusdam dolorem dolorum numquam neque nesciunt voluptates pariatur.
+                    </div>
+                </div>
+                <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
+                    <div class="cell-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam.
+                    </div>
+                </div>
+                <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
+                    <div class="cell-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, cum, nesciunt dolor repellendus quaerat enim dolores fugiat veniam delectus repellat veritatis aliquam nihil dolorem harum fuga dolorum similique eveniet sunt?
+                    </div>
+                </div>
+                <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
+                    <div class="cell-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, omnis, natus tenetur exercitationem facere doloremque ut dolores laudantium nihil at repudiandae est numquam fuga tempora totam! Sint beatae magni fugit!
+                    </div>
+                </div>
+                <div class="gd-sm-2-2  gd-md-4-4  gd-lg-1-5">
+                    <div class="cell-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, dicta, neque, ut quis omnis quos nam pariatur minus fugit suscipit aspernatur sint ullam quas explicabo veniam. Facere, suscipit alias officiis.
+                    </div>
                 </div>
             </div>
 
-            <div class="gd-xs-1-12">
-                1/6
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-1-6"></div>
+            <h2>Change grid based on viewport</h2>
+            <p>The following is grid which is:</p>
+            <ul>
+                <li>2 columns for mobile</li>
+                <li>4 columns for tablet</li>
+                <li>3 columns for desktop</li>
+                <li>6 columns for large monitor</li>
+            </ul>
+
+<pre><code>&lt;div class="gd-row"&gt;
+    &lt;div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9"&gt;Cell&lt;/div&gt;
+    &lt;div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9"&gt;Cell&lt;/div&gt;
+    &lt;div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9"&gt;Cell&lt;/div&gt;
+    &lt;div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9"&gt;Cell&lt;/div&gt;
+    &lt;div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9"&gt;Cell&lt;/div&gt;
+    &lt;div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9"&gt;Cell&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div class="gd-row">
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
+                </div>
+                <div class="gd-xs-1-2  gd-sm-1-4  gd-md-1-3  gd-lg-1-9">
+                    <div class="cell-wrap">
+                        Cell
+                    </div>
                 </div>
             </div>
 
-            <div class="gd-xs-1-12">
-                3/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-3-12"></div>
-                </div>
-            </div>
+            <h2>How exactly does the naming convention work?</h2>
+            <div class="class-convention">.gd-<span>&lt;VIEWPORT&gt;</span>-<span>&lt;NUMERATOR&gt;</span>-<span>&lt;DENOMINATOR&gt;</span></div>
 
-            <div class="gd-xs-1-12">
-                1/4
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-1-4"></div>
-                </div>
-            </div>
+            <p>There is no maximum amount of columns.</p>
 
-            <div class="gd-xs-1-12">
-                4/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-4-12"></div>
-                </div>
-            </div>
+            <ul>
+                <li><strong>xs</strong> - Extra Small, for mobile</li>
+                <li><strong>sm</strong> - Small, for tablet</li>
+                <li><strong>md</strong> - Medium, for desktop</li>
+                <li><strong>lg</strong> - Large, for wide monitors</li>
+            </ul>
 
-            <div class="gd-xs-1-12">
-                1/3
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-1-3"></div>
-                </div>
-            </div>
+            <br>
 
-            <div class="gd-xs-1-12">
-                5/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-5-12"></div>
-                </div>
-            </div>
+            <h3>If you wanted to make a 4 column grid for regular desktop:</h3>
+            <p>
+                grid medium 1/4<br>
+                <code>.gd-md-1-4</code>
+            </p>
 
-            <div class="gd-xs-1-12">
-                6/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-6-12"></div>
-                </div>
-            </div>
+            <h3>2 column grid for mobile:</h3>
+            <p>
+                grid extra small 1/2<br>
+                <code>.gd-xs-1-2</code>
+            </p>
 
-            <div class="gd-xs-1-12">
-                1/2
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-1-2"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                7/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-7-12"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                8/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-8-12"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                2/3
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-2-3"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                9/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-9-12"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                3/4
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-3-4"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                10/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-10-12"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                5/6
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-5-6"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                1/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-10-12"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                2/2
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-2-2"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                3/3
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-3-3"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                4/4
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-4-4"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                5/5
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-5-5"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                6/6
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-6-6"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                7/7
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-7-7"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                8/8
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-8-8"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                9/9
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-9-9"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                10/10
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-10-10"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                11/11
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-11-11"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                12/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-12-12"></div>
-                </div>
-            </div>
-
-            <div class="gd-xs-1-12">
-                12/12
-            </div>
-            <div class="gd-xs-11-12 cols">
-                <div class="gd-row">
-                    <div class="gd-sm-12-12"></div>
-                </div>
-            </div>
-        </div>
-
-        <h2>Responsive and fluid</h2>
-        <p>While the grids are percentage based which makes them fluid, you can also make them responsive. For example:</p>
-
-        <div class="gd-row">
-            <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
-                <div class="cell-wrap">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, quisquam, nihil, id rerum perferendis recusandae accusamus nobis obcaecati adipisci natus molestiae quas quibusdam dolorem dolorum numquam neque nesciunt voluptates pariatur.
-                </div>
-            </div>
-            <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
-                <div class="cell-wrap">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam.
-                </div>
-            </div>
-            <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
-                <div class="cell-wrap">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, cum, nesciunt dolor repellendus quaerat enim dolores fugiat veniam delectus repellat veritatis aliquam nihil dolorem harum fuga dolorum similique eveniet sunt?
-                </div>
-            </div>
-            <div class="gd-sm-1-2  gd-md-1-4  gd-lg-1-5">
-                <div class="cell-wrap">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, omnis, natus tenetur exercitationem facere doloremque ut dolores laudantium nihil at repudiandae est numquam fuga tempora totam! Sint beatae magni fugit!
-                </div>
-            </div>
-            <div class="gd-sm-2-2  gd-md-4-4  gd-lg-1-5">
-                <div class="cell-wrap">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, dicta, neque, ut quis omnis quos nam pariatur minus fugit suscipit aspernatur sint ullam quas explicabo veniam. Facere, suscipit alias officiis.
-                </div>
-            </div>
-        </div>
+        </div> <!-- .container -->
 
     </body>
 </html>
