@@ -4,59 +4,59 @@
 
 // @media query shortcut mixin
  @mixin bp($point) {
- 	$bp-xs-obj: nth($bps, 1);
-	$bp-xs: nth($bp-xs-obj, 1);
+    $bp-xs-obj: nth($bps, 1);
+    $bp-xs: nth($bp-xs-obj, 1);
 
-	@if $point == $bp-xs {
-		@content;
-	}
+    @if $point == $bp-xs {
+        @content;
+    }
 
-	@else {
-		@each $bp in $bps {
-			$bp-name: nth($bp, 1);
-			$bp-width: nth($bp, 2);
+    @else {
+        @each $bp in $bps {
+            $bp-name: nth($bp, 1);
+            $bp-width: nth($bp, 2);
 
-			@if $point == $bp-name {
-				@media (min-width: $bp-width) {
-					@content;
-				}
-			}
+            @if $point == $bp-name {
+                @media (min-width: $bp-width) {
+                    @content;
+                }
+            }
 
-		}
-	}
+        }
+    }
 
 }
 
 // Return relevent gutter based on viewport
 @function gd-gutter($size, $horizontal) {
 
-	@if $horizontal == true {
+    @if $horizontal == true {
 
-		@each $bp in $bps {
-			$bp-name: nth($bp, 1);
-			$bp-h-gutter: nth($bp, 3);
+        @each $bp in $bps {
+            $bp-name: nth($bp, 1);
+            $bp-h-gutter: nth($bp, 3);
 
-			@if $size == $bp-name {
-				@return $bp-h-gutter;
-			}
-		}
-	}
+            @if $size == $bp-name {
+                @return $bp-h-gutter;
+            }
+        }
+    }
 
-	@else {
-		@each $bp in $bps {
-			$bp-name: nth($bp, 1);
-			$bp-v-gutter: nth($bp, 4);
+    @else {
+        @each $bp in $bps {
+            $bp-name: nth($bp, 1);
+            $bp-v-gutter: nth($bp, 4);
 
-			@if $size == $bp-name {
-				@return $bp-v-gutter;
-			}
-		}
-	}
+            @if $size == $bp-name {
+                @return $bp-v-gutter;
+            }
+        }
+    }
 
 }
 
 // Calculate the perc width of the column
 @function gd-col-width($col-total, $col-count) {
-	// Percentage width per column
-	@return (100 / ($col-total / $col-count)) * 1%;
+    // Percentage width per column
+    @return (100 / ($col-total / $col-count)) * 1%;
 }

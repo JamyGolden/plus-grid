@@ -12,40 +12,40 @@
 // Grid clearfix
 // ==========================================================================
 .gd-cf {
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
 
-	&:after {
-		clear: both;
-	}
+    &:after {
+        clear: both;
+    }
 
-	*zoom: 1; // for IE 6/7
+    *zoom: 1; // for IE 6/7
 }
 
 // Grid row
 // ==========================================================================
 .gd-row {
-	@extend .gd-cf;
-	margin-left: -$xs-h-gutter;
-	margin-right: -$xs-h-gutter;
+    @extend .gd-cf;
+    margin-left: -$xs-h-gutter;
+    margin-right: -$xs-h-gutter;
 
-	@include bp(sm) {
-		margin-left: -$sm-h-gutter;
-		margin-right: -$sm-h-gutter;
-	}
+    @include bp(sm) {
+        margin-left: -$sm-h-gutter;
+        margin-right: -$sm-h-gutter;
+    }
 
-	@include bp(md) {
-		margin-left: -$md-h-gutter;
-		margin-right: -$md-h-gutter;
-	}
+    @include bp(md) {
+        margin-left: -$md-h-gutter;
+        margin-right: -$md-h-gutter;
+    }
 
-	@include bp(lg) {
-		margin-left: -$lg-h-gutter;
-		margin-right: -$lg-h-gutter;
-	}
+    @include bp(lg) {
+        margin-left: -$lg-h-gutter;
+        margin-right: -$lg-h-gutter;
+    }
 }
 
 // General grid cell styling
@@ -54,23 +54,23 @@
 // as modifiers
 // ==========================================================================
 @for $i from 1 through length($bps) {
-	$bp-obj: nth($bps, $i);
-	$name: nth($bp-obj, 1);
+    $bp-obj: nth($bps, $i);
+    $name: nth($bp-obj, 1);
 
-	.gd-col, // Class for <= IE7
-	[class*="gd-#{$name}-"] {
-		@include box-sizing(border-box);
-		float: left;
+    .gd-col, // Class for <= IE7
+    [class*="gd-#{$name}-"] {
+        @include box-sizing(border-box);
+        float: left;
 
-		// Vertical
-		padding-left: gd-gutter($name, true);
-		padding-right: gd-gutter($name, true);
-		// Horizontal
-		padding-top: gd-gutter($name, false);
-		padding-bottom: gd-gutter($name, false);
+        // Vertical
+        padding-left: gd-gutter($name, true);
+        padding-right: gd-gutter($name, true);
+        // Horizontal
+        padding-top: gd-gutter($name, false);
+        padding-bottom: gd-gutter($name, false);
 
-		width: 100%;
-	}
+        width: 100%;
+    }
 }
 
 // Grid loop
@@ -81,45 +81,45 @@
 // Then run through each cell in the column
 // ==========================================================================
 @for $i from 1 through length($bps) {
-	$bp-obj: nth($bps, $i);
-	$name: nth($bp-obj, 1);
+    $bp-obj: nth($bps, $i);
+    $name: nth($bp-obj, 1);
 
-	@for $columns from 2 through $gd-column-total {
+    @for $columns from 2 through $gd-column-total {
 
-		// For each column in total columns
-		@for $col from 1 through $columns {
+        // For each column in total columns
+        @for $col from 1 through $columns {
 
-			.gd-#{$name}-#{$col}-#{$columns} {
-				// XS doesn't get a breakpoint
-				@if $name == 'xs' {
-					width: gd-col-width($columns, $col);
-				}
-				@else {
-					@include bp($name) {
-						width: gd-col-width($columns, $col);
-						padding-left: gd-gutter($name, true);
-						padding-right: gd-gutter($name, true);
+            .gd-#{$name}-#{$col}-#{$columns} {
+                // XS doesn't get a breakpoint
+                @if $name == 'xs' {
+                    width: gd-col-width($columns, $col);
+                }
+                @else {
+                    @include bp($name) {
+                        width: gd-col-width($columns, $col);
+                        padding-left: gd-gutter($name, true);
+                        padding-right: gd-gutter($name, true);
 
-						// If vertical gutter is enabled
-						padding-top: gd-gutter($name, false);
-						padding-bottom: gd-gutter($name, false);
-					}
-				}
-			}
-		}
+                        // If vertical gutter is enabled
+                        padding-top: gd-gutter($name, false);
+                        padding-bottom: gd-gutter($name, false);
+                    }
+                }
+            }
+        }
 
-	} // @for
+    } // @for
 }
 
 // Modifiers
 .gd-row--no-gutter {
-	margin: 0;
+    margin: 0;
 
-	// @Todo
-	// This is a bit of a gross assumption.
-	& > [class*="gd-"],
-	& > [class*=" gd-"],
-	& > .gd-col {
-		padding: 0;
-	}
+    // @Todo
+    // This is a bit of a gross assumption.
+    & > [class*="gd-"],
+    & > [class*=" gd-"],
+    & > .gd-col {
+        padding: 0;
+    }
 }
