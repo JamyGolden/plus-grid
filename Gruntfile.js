@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 }
             },
             scripts: {
-                files: ['scss/main.scss', 'scss/main.scss'],
+                files: ['scss/main.scss', 'scss/**/*.scss'],
                 tasks: ['version', 'compass']
             },
         },
