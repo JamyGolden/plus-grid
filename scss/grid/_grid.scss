@@ -53,8 +53,9 @@
 // Used and styled as primary "class", while the others are seen
 // as modifiers
 // ==========================================================================
-@for $i from 1 through length($bp-name-list) {
-	$name: nth($bp-name-list, $i);
+@for $i from 1 through length($bps) {
+	$bp-obj: nth($bps, $i);
+	$name: nth($bp-obj, 1);
 
 	.gd-col, // Class for <= IE7
 	[class*="gd-#{$name}-"] {
@@ -79,8 +80,9 @@
 // Then run through the total columns
 // Then run through each cell in the column
 // ==========================================================================
-@for $i from 1 through length($bp-name-list) {
-	$name: nth($bp-name-list, $i);
+@for $i from 1 through length($bps) {
+	$bp-obj: nth($bps, $i);
+	$name: nth($bp-obj, 1);
 
 	@for $columns from 2 through $gd-column-total {
 
