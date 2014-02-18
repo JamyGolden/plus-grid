@@ -26,7 +26,7 @@ Through the SCSS variables, the horizontal and vertical gutters can be modified 
 ## Example usage
 If the
 A mobile and up grid with 3 columns
-
+```html
     <div class="gd-row">
         <div class="gd-xs-1-3">...</div>
         <div class="gd-xs-1-3">...</div>
@@ -38,7 +38,7 @@ IE8+ and modern browsers.
 
 IE7 support is built in, however an extra class of `.gd-col` is needed to be added to each cell/column item. For example:
 Support would be added to the above 3 column grid example by modifying it to be the following:
-
+```html
     <div class="gd-row">
         <div class="gd-col gd-xs-1-3">...</div>
         <div class="gd-col gd-xs-1-3">...</div>
