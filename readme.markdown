@@ -72,6 +72,9 @@ Support would be added to the above 3 column grid example by modifying it to be 
 </div>
 ```
 
+## License
+MIT
+
 ## Changelog:
 * 1.0.1 - Function/var/mixin internal fixups. 18-02-2014
 * 1.0.0 - V1 release. 17-02-2014
