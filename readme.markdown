@@ -62,13 +62,12 @@ The grid classes work using the mobile first methadology, meaning `.gd-xs-1-2` w
 ## Browser support
 IE8+ and modern browsers.
 
-IE7 support is built in, however an extra class of `.gd-col` is needed to be added to each cell/column item. For example:
-Support would be added to the above 3 column grid example by modifying it to be the following:
+Since the `box-sizing` CSS property is used, IE7 won't support any gutters. In order for the grids to work correctly in IE7, all horizontal gutters should be set to 0 within the _config.scss file. In addition to this, all cells/columns should get a class of `.gd-<VIEWPORT>-col`. For example, support would be added to the above 3 column grid example by modifying it to be the following:
 ```html
 <div class="gd-row">
-    <div class="gd-col gd-xs-1-3">...</div>
-    <div class="gd-col gd-xs-1-3">...</div>
-    <div class="gd-col gd-xs-1-3">...</div>
+    <div class="gd-xs-col gd-xs-1-3">...</div>
+    <div class="gd-xs-col gd-xs-1-3">...</div>
+    <div class="gd-xs-col gd-xs-1-3">...</div>
 </div>
 ```
 
@@ -76,5 +75,6 @@ Support would be added to the above 3 column grid example by modifying it to be 
 MIT
 
 ## Changelog:
+* 1.0.2 - Fixed IE7 class name bug
 * 1.0.1 - Function/var/mixin internal fixups. 18-02-2014
 * 1.0.0 - V1 release. 17-02-2014

@@ -57,7 +57,7 @@
     $bp-obj: nth($bps, $i);
     $name: nth($bp-obj, 1);
 
-    .gd-col, // Class for <= IE7
+    .gd-#{$name}-col, // IE7 Fix
     [class*="gd-#{$name}-"] {
         @include box-sizing(border-box);
         float: left;
@@ -118,8 +118,17 @@
     // @Todo
     // This is a bit of a gross assumption.
     & > [class*="gd-"],
-    & > [class*=" gd-"],
-    & > .gd-col {
+    & > [class*=" gd-"] {
         padding: 0;
+    }
+
+    // IE7 fix
+    @for $i from 1 through length($bps) {
+        $bp-obj: nth($bps, $i);
+        $name: nth($bp-obj, 1);
+
+        & > .gd-#{$name}-col {
+            padding: 0;
+        }
     }
 }
