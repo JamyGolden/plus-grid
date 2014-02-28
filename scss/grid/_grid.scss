@@ -29,22 +29,22 @@
 // ==========================================================================
 .gd-row {
     @extend .gd-cf;
-    margin-left: -$xs-h-gutter;
-    margin-right: -$xs-h-gutter;
+    margin-left: -$gd-xs-h-gutter;
+    margin-right: -$gd-xs-h-gutter;
 
-    @include bp(sm) {
-        margin-left: -$sm-h-gutter;
-        margin-right: -$sm-h-gutter;
+    @include gd-bp(sm) {
+        margin-left: -$gd-sm-h-gutter;
+        margin-right: -$gd-sm-h-gutter;
     }
 
-    @include bp(md) {
-        margin-left: -$md-h-gutter;
-        margin-right: -$md-h-gutter;
+    @include gd-bp(md) {
+        margin-left: -$gd-md-h-gutter;
+        margin-right: -$gd-md-h-gutter;
     }
 
-    @include bp(lg) {
-        margin-left: -$lg-h-gutter;
-        margin-right: -$lg-h-gutter;
+    @include gd-bp(lg) {
+        margin-left: -$gd-lg-h-gutter;
+        margin-right: -$gd-lg-h-gutter;
     }
 }
 
@@ -53,8 +53,8 @@
 // Used and styled as primary "class", while the others are seen
 // as modifiers
 // ==========================================================================
-@for $i from 1 through length($bps) {
-    $bp-obj: nth($bps, $i);
+@for $i from 1 through length($gd-bps) {
+    $bp-obj: nth($gd-bps, $i);
     $name: nth($bp-obj, 1);
 
     .gd-#{$name}-col, // IE7 Fix
@@ -80,8 +80,8 @@
 // Then run through the total columns
 // Then run through each cell in the column
 // ==========================================================================
-@for $i from 1 through length($bps) {
-    $bp-obj: nth($bps, $i);
+@for $i from 1 through length($gd-bps) {
+    $bp-obj: nth($gd-bps, $i);
     $name: nth($bp-obj, 1);
 
     @for $columns from 2 through $gd-column-total {
@@ -95,7 +95,7 @@
                     width: gd-col-width($columns, $col);
                 }
                 @else {
-                    @include bp($name) {
+                    @include gd-bp($name) {
                         width: gd-col-width($columns, $col);
                         padding-left: gd-gutter($name, true);
                         padding-right: gd-gutter($name, true);
@@ -123,8 +123,8 @@
     }
 
     // IE7 fix
-    @for $i from 1 through length($bps) {
-        $bp-obj: nth($bps, $i);
+    @for $i from 1 through length($gd-bps) {
+        $bp-obj: nth($gd-bps, $i);
         $name: nth($bp-obj, 1);
 
         & > .gd-#{$name}-col {

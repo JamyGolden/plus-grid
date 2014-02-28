@@ -3,8 +3,8 @@
 // ==========================================================================
 
 // @media query shortcut mixin
- @mixin bp($point) {
-    $bp-xs-obj: nth($bps, 1);
+ @mixin gd-bp($point) {
+    $bp-xs-obj: nth($gd-bps, 1);
     $bp-xs: nth($bp-xs-obj, 1);
 
     @if $point == $bp-xs {
@@ -12,7 +12,7 @@
     }
 
     @else {
-        @each $bp in $bps {
+        @each $bp in $gd-bps {
             $bp-name: nth($bp, 1);
             $bp-width: nth($bp, 2);
 
@@ -32,7 +32,7 @@
 
     @if $horizontal == true {
 
-        @each $bp in $bps {
+        @each $bp in $gd-bps {
             $bp-name: nth($bp, 1);
             $bp-h-gutter: nth($bp, 3);
 
@@ -43,7 +43,7 @@
     }
 
     @else {
-        @each $bp in $bps {
+        @each $bp in $gd-bps {
             $bp-name: nth($bp, 1);
             $bp-v-gutter: nth($bp, 4);
 

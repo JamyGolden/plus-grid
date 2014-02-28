@@ -3,16 +3,16 @@
 // ==========================================================================
 
 // Horizontal Gutter
-$lg-h-gutter: 10px; // Grid padding or gutter
-$md-h-gutter: 10px; // Allows for thinner MD gutter
-$sm-h-gutter: 10px; // Allows for thinner SM gutter
-$xs-h-gutter: 10px; // Allows for thinner XS gutter
+$gd-lg-h-gutter: 10px; // Grid padding or gutter
+$gd-md-h-gutter: 10px; // Allows for thinner MD gutter
+$gd-sm-h-gutter: 10px; // Allows for thinner SM gutter
+$gd-xs-h-gutter: 10px; // Allows for thinner XS gutter
 
 // Vertical Gutter
-$lg-v-gutter: 10px; // Grid padding or gutter
-$md-v-gutter: 10px; // Allows for thinner MD gutter
-$sm-v-gutter: 10px; // Allows for thinner SM gutter
-$xs-v-gutter: 10px; // Allows for thinner XS gutter
+$gd-lg-v-gutter: 10px; // Grid padding or gutter
+$gd-md-v-gutter: 10px; // Allows for thinner MD gutter
+$gd-sm-v-gutter: 10px; // Allows for thinner SM gutter
+$gd-xs-v-gutter: 10px; // Allows for thinner XS gutter
 
 $gd-column-total: 16; // Total number columns available
 
@@ -20,7 +20,7 @@ $gd-column-total: 16; // Total number columns available
 // $bps is an object containing a breakpoint list:
 // <NAME> <WIDTH> <HORIZONTAL-GUTTER> <VERTICAL-GUTTER>
 // ==========================================================================
-$bps: 'xs' 0  $xs-h-gutter $xs-v-gutter,
-      'sm' 768px $sm-h-gutter $sm-v-gutter,
-      'md' 992px $md-h-gutter $md-v-gutter,
-      'lg' 1200px $lg-h-gutter $lg-v-gutter;
+$gd-bps: 'xs' 0  $gd-xs-h-gutter $gd-xs-v-gutter,
+         'sm' 768px $gd-sm-h-gutter $gd-sm-v-gutter,
+         'md' 992px $gd-md-h-gutter $gd-md-v-gutter,
+         'lg' 1200px $gd-lg-h-gutter $gd-lg-v-gutter;
