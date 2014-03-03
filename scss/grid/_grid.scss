@@ -48,61 +48,58 @@
     }
 }
 
-// General grid cell styling
-//
-// Used and styled as primary "class", while the others are seen
-// as modifiers
+// Viewport loop
 // ==========================================================================
 @for $i from 1 through length($pg-bps) {
-    $bp-obj: nth($pg-bps, $i);
-    $name: nth($bp-obj, 1);
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
 
-    .pg-#{$name}-col, // IE7 Fix
-    [class*="pg-#{$name}-"] {
+    // General grid cell styling
+    //
+    // Used and styled as primary "class", while the others are seen
+    // as modifiers
+    // ==========================================================================
+    .pg-#{$pg-viewport}-col, // IE7 Fix
+    [class*="pg-#{$pg-viewport}-"] {
         @include box-sizing(border-box);
         float: left;
 
         // Vertical
-        padding-left: pg-gutter($name, true);
-        padding-right: pg-gutter($name, true);
+        padding-left: pg-gutter($pg-viewport, true);
+        padding-right: pg-gutter($pg-viewport, true);
         // Horizontal
-        padding-top: pg-gutter($name, false);
-        padding-bottom: pg-gutter($name, false);
+        padding-top: pg-gutter($pg-viewport, false);
+        padding-bottom: pg-gutter($pg-viewport, false);
 
         width: 100%;
     }
-}
 
-// PlusGrid loop
-//
-// Build grid
-// Run through the different breakpoint names
-// Then run through the total columns
-// Then run through each cell in the column
-// ==========================================================================
-@for $i from 1 through length($pg-bps) {
-    $bp-obj: nth($pg-bps, $i);
-    $name: nth($bp-obj, 1);
-
-    @for $columns from 2 through $pg-column-total {
+    // PlusGrid loop
+    //
+    // Build grid
+    // Run through the different breakpoint names
+    // Then run through the total columns
+    // Then run through each cell in the column
+    // ==========================================================================
+    @for $pg-columns from 2 through $pg-column-total {
 
         // For each column in total columns
-        @for $col from 1 through $columns {
+        @for $col from 1 through $pg-columns {
 
-            .pg-#{$name}-#{$col}-#{$columns} {
+            .pg-#{$pg-viewport}-#{$col}-#{$pg-columns} {
                 // XS doesn't get a breakpoint
-                @if $name == 'xs' {
-                    width: pg-col-width($columns, $col);
+                @if $pg-viewport == 'xs' {
+                    width: pg-col-width($pg-columns, $col);
                 }
                 @else {
-                    @include pg-bp($name) {
-                        width: pg-col-width($columns, $col);
-                        padding-left: pg-gutter($name, true);
-                        padding-right: pg-gutter($name, true);
+                    @include pg-bp($pg-viewport) {
+                        width: pg-col-width($pg-columns, $col);
+                        padding-left: pg-gutter($pg-viewport, true);
+                        padding-right: pg-gutter($pg-viewport, true);
 
                         // If vertical gutter is enabled
-                        padding-top: pg-gutter($name, false);
-                        padding-bottom: pg-gutter($name, false);
+                        padding-top: pg-gutter($pg-viewport, false);
+                        padding-bottom: pg-gutter($pg-viewport, false);
                     }
                 }
             }
@@ -112,23 +109,58 @@
 }
 
 // Modifiers
-.pg-row--no-gutter {
-    margin: 0;
+// ==========================================================================
 
-    // @Todo
-    // This is a bit of a gross assumption.
-    & > [class*="pg-"],
-    & > [class*=" pg-"] {
-        padding: 0;
+.pg-row--no-gutter, // Remove gutter
+.pg-row--no-h-gutter { // Remove horizontal gutter
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@for $i from 1 through length($pg-bps) {
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
+
+    // Remove gutter
+    .pg-row--no-gutter {
+        & > [class*="pg-#{$pg-viewport}-"],
+        & > [class*=" pg-#{$pg-viewport}-"] {
+            padding: 0;
+        }
+
+        // IE7 fix
+        & > .pg-#{$pg-viewport}-col {
+            padding: 0;
+        }
     }
 
-    // IE7 fix
-    @for $i from 1 through length($pg-bps) {
-        $bp-obj: nth($pg-bps, $i);
-        $name: nth($bp-obj, 1);
+    // Remove horizontal gutter
+    .pg-row--no-h-gutter {
+        & > [class*="pg-#{$pg-viewport}-"],
+        & > [class*=" pg-#{$pg-viewport}-"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
 
-        & > .pg-#{$name}-col {
-            padding: 0;
+        // IE7 fix
+        & > .pg-#{$pg-viewport}-col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    // Remove vertical gutter
+    .pg-row--no-v-gutter {
+        & > [class*="pg-#{$pg-viewport}-"],
+        & > [class*=" pg-#{$pg-viewport}-"] {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        // IE7 fix
+        & > .pg-#{$pg-viewport}-col {
+            padding-top: 0;
+            padding-bottom: 0;
         }
     }
 }

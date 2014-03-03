@@ -4,9 +4,11 @@
 
 // @media query shortcut mixin
  @mixin pg-bp($point) {
+    // XS obj vars
     $bp-xs-obj: nth($pg-bps, 1);
     $bp-xs: nth($bp-xs-obj, 1);
 
+    // If XS
     @if $point == $bp-xs {
         @content;
     }
