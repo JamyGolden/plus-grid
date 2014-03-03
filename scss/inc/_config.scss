@@ -3,12 +3,16 @@
 // ==========================================================================
 
 // Horizontal Gutter
+// Naming convention: <PlusGrid>-<Size>-<Horizontal>-<Gutter>
+// ==========================================================================
 $pg-lg-h-gutter: 10px; // Grid padding or gutter
 $pg-md-h-gutter: 10px; // Allows for thinner MD gutter
 $pg-sm-h-gutter: 10px; // Allows for thinner SM gutter
 $pg-xs-h-gutter: 10px; // Allows for thinner XS gutter
 
 // Vertical Gutter
+// Naming convention: <PlusGrid>-<Size>-<Vertical>-<Gutter>
+// ==========================================================================
 $pg-lg-v-gutter: 10px; // Grid padding or gutter
 $pg-md-v-gutter: 10px; // Allows for thinner MD gutter
 $pg-sm-v-gutter: 10px; // Allows for thinner SM gutter
@@ -18,7 +22,7 @@ $pg-column-total: 16; // Total number columns available
 
 // Breakpoints
 // $bps is an object containing a breakpoint list:
-// <NAME> <WIDTH> <HORIZONTAL-GUTTER> <VERTICAL-GUTTER>
+// <Name> <Width> <Horizontal-gutter> <Vertical-gutter>
 // ==========================================================================
 $pg-bps: 'xs' 0  $pg-xs-h-gutter $pg-xs-v-gutter,
          'sm' 768px $pg-sm-h-gutter $pg-sm-v-gutter,

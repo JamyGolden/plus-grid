@@ -1,5 +1,5 @@
 // ==========================================================================
-// Grid file
+// PlusGrid file
 //
 // The grid works as follows:
 // .<NAMESPACE>-<VIEWPORT>-<COLUMN SPAN>-<TOTAL COLUMNS>
@@ -9,7 +9,7 @@
 // It's easy to ready as "PlusGrid small 4/12" or "PlusGrid small four-twelfth"
 // ==========================================================================
 
-// Grid clearfix
+// PlusGrid clearfix
 // ==========================================================================
 .pg-cf {
     &:before,
@@ -25,7 +25,7 @@
     *zoom: 1; // for IE 6/7
 }
 
-// Grid row
+// PlusGrid row
 // ==========================================================================
 .pg-row {
     @extend .pg-cf;
@@ -73,7 +73,7 @@
     }
 }
 
-// Grid loop
+// PlusGrid loop
 //
 // Build grid
 // Run through the different breakpoint names
