@@ -2,16 +2,16 @@
 // Grid file
 //
 // The grid works as follows:
-// .gd-<VIEWPORT>-<COLUMN SPAN>-<TOTAL COLUMNS>
+// .<NAMESPACE>-<VIEWPORT>-<COLUMN SPAN>-<TOTAL COLUMNS>
 //
 // A typical example may look like this:
-// .gd-sm-4-12
-// It's easy to ready as "Grid small 4/12" or "Grid small four-twelfth"
+// .pg-sm-4-12
+// It's easy to ready as "PlusGrid small 4/12" or "PlusGrid small four-twelfth"
 // ==========================================================================
 
 // Grid clearfix
 // ==========================================================================
-.gd-cf {
+.pg-cf {
     &:before,
     &:after {
         content: " ";
@@ -27,24 +27,24 @@
 
 // Grid row
 // ==========================================================================
-.gd-row {
-    @extend .gd-cf;
-    margin-left: -$gd-xs-h-gutter;
-    margin-right: -$gd-xs-h-gutter;
+.pg-row {
+    @extend .pg-cf;
+    margin-left: -$pg-xs-h-gutter;
+    margin-right: -$pg-xs-h-gutter;
 
-    @include gd-bp(sm) {
-        margin-left: -$gd-sm-h-gutter;
-        margin-right: -$gd-sm-h-gutter;
+    @include pg-bp(sm) {
+        margin-left: -$pg-sm-h-gutter;
+        margin-right: -$pg-sm-h-gutter;
     }
 
-    @include gd-bp(md) {
-        margin-left: -$gd-md-h-gutter;
-        margin-right: -$gd-md-h-gutter;
+    @include pg-bp(md) {
+        margin-left: -$pg-md-h-gutter;
+        margin-right: -$pg-md-h-gutter;
     }
 
-    @include gd-bp(lg) {
-        margin-left: -$gd-lg-h-gutter;
-        margin-right: -$gd-lg-h-gutter;
+    @include pg-bp(lg) {
+        margin-left: -$pg-lg-h-gutter;
+        margin-right: -$pg-lg-h-gutter;
     }
 }
 
@@ -53,21 +53,21 @@
 // Used and styled as primary "class", while the others are seen
 // as modifiers
 // ==========================================================================
-@for $i from 1 through length($gd-bps) {
-    $bp-obj: nth($gd-bps, $i);
+@for $i from 1 through length($pg-bps) {
+    $bp-obj: nth($pg-bps, $i);
     $name: nth($bp-obj, 1);
 
-    .gd-#{$name}-col, // IE7 Fix
-    [class*="gd-#{$name}-"] {
+    .pg-#{$name}-col, // IE7 Fix
+    [class*="pg-#{$name}-"] {
         @include box-sizing(border-box);
         float: left;
 
         // Vertical
-        padding-left: gd-gutter($name, true);
-        padding-right: gd-gutter($name, true);
+        padding-left: pg-gutter($name, true);
+        padding-right: pg-gutter($name, true);
         // Horizontal
-        padding-top: gd-gutter($name, false);
-        padding-bottom: gd-gutter($name, false);
+        padding-top: pg-gutter($name, false);
+        padding-bottom: pg-gutter($name, false);
 
         width: 100%;
     }
@@ -80,29 +80,29 @@
 // Then run through the total columns
 // Then run through each cell in the column
 // ==========================================================================
-@for $i from 1 through length($gd-bps) {
-    $bp-obj: nth($gd-bps, $i);
+@for $i from 1 through length($pg-bps) {
+    $bp-obj: nth($pg-bps, $i);
     $name: nth($bp-obj, 1);
 
-    @for $columns from 2 through $gd-column-total {
+    @for $columns from 2 through $pg-column-total {
 
         // For each column in total columns
         @for $col from 1 through $columns {
 
-            .gd-#{$name}-#{$col}-#{$columns} {
+            .pg-#{$name}-#{$col}-#{$columns} {
                 // XS doesn't get a breakpoint
                 @if $name == 'xs' {
-                    width: gd-col-width($columns, $col);
+                    width: pg-col-width($columns, $col);
                 }
                 @else {
-                    @include gd-bp($name) {
-                        width: gd-col-width($columns, $col);
-                        padding-left: gd-gutter($name, true);
-                        padding-right: gd-gutter($name, true);
+                    @include pg-bp($name) {
+                        width: pg-col-width($columns, $col);
+                        padding-left: pg-gutter($name, true);
+                        padding-right: pg-gutter($name, true);
 
                         // If vertical gutter is enabled
-                        padding-top: gd-gutter($name, false);
-                        padding-bottom: gd-gutter($name, false);
+                        padding-top: pg-gutter($name, false);
+                        padding-bottom: pg-gutter($name, false);
                     }
                 }
             }
@@ -112,22 +112,22 @@
 }
 
 // Modifiers
-.gd-row--no-gutter {
+.pg-row--no-gutter {
     margin: 0;
 
     // @Todo
     // This is a bit of a gross assumption.
-    & > [class*="gd-"],
-    & > [class*=" gd-"] {
+    & > [class*="pg-"],
+    & > [class*=" pg-"] {
         padding: 0;
     }
 
     // IE7 fix
-    @for $i from 1 through length($gd-bps) {
-        $bp-obj: nth($gd-bps, $i);
+    @for $i from 1 through length($pg-bps) {
+        $bp-obj: nth($pg-bps, $i);
         $name: nth($bp-obj, 1);
 
-        & > .gd-#{$name}-col {
+        & > .pg-#{$name}-col {
             padding: 0;
         }
     }
