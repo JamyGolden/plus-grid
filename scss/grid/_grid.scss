@@ -27,6 +27,28 @@
 
 // PlusGrid row
 // ==========================================================================
+.pg-container {
+    padding-left: -$pg-xs-h-gutter;
+    padding-right: -$pg-xs-h-gutter;
+
+    @include pg-bp(sm) {
+        padding-left: -$pg-sm-h-gutter;
+        padding-right: -$pg-sm-h-gutter;
+    }
+
+    @include pg-bp(md) {
+        padding-left: -$pg-md-h-gutter;
+        padding-right: -$pg-md-h-gutter;
+    }
+
+    @include pg-bp(lg) {
+        padding-left: -$pg-lg-h-gutter;
+        padding-right: -$pg-lg-h-gutter;
+    }
+}
+
+// PlusGrid row
+// ==========================================================================
 .pg-row {
     @extend .pg-cf;
     margin-left: -$pg-xs-h-gutter;
