@@ -28,22 +28,22 @@
 // PlusGrid row
 // ==========================================================================
 .pg-container {
-    padding-left: -$pg-xs-h-gutter;
-    padding-right: -$pg-xs-h-gutter;
+    padding-left: $pg-xs-h-gutter;
+    padding-right: $pg-xs-h-gutter;
 
     @include pg-bp(sm) {
-        padding-left: -$pg-sm-h-gutter;
-        padding-right: -$pg-sm-h-gutter;
+        padding-left: $pg-sm-h-gutter;
+        padding-right: $pg-sm-h-gutter;
     }
 
     @include pg-bp(md) {
-        padding-left: -$pg-md-h-gutter;
-        padding-right: -$pg-md-h-gutter;
+        padding-left: $pg-md-h-gutter;
+        padding-right: $pg-md-h-gutter;
     }
 
     @include pg-bp(lg) {
-        padding-left: -$pg-lg-h-gutter;
-        padding-right: -$pg-lg-h-gutter;
+        padding-left: $pg-lg-h-gutter;
+        padding-right: $pg-lg-h-gutter;
     }
 }
 
@@ -71,6 +71,8 @@
 }
 
 // Viewport loop
+//
+// First viewport loop
 // ==========================================================================
 @for $i from 1 through length($pg-bps) {
     $pg-vp-obj: nth($pg-bps, $i);
@@ -95,14 +97,21 @@
 
         width: 100%;
     }
+}
 
-    // PlusGrid loop
-    //
-    // Build grid
-    // Run through the different breakpoint names
-    // Then run through the total columns
-    // Then run through each cell in the column
-    // ==========================================================================
+// PlusGrid loop
+//
+// Build grid
+// Run through the different breakpoint names
+// Then run through the total columns
+// Then run through each cell in the column
+//
+// Second viewport loop
+// ==========================================================================
+@for $i from 1 through length($pg-bps) {
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
+
     @for $pg-columns from 2 through $pg-column-total {
 
         // For each column in total columns
@@ -139,6 +148,7 @@
     margin-right: 0;
 }
 
+// Third viewport loop
 @for $i from 1 through length($pg-bps) {
     $pg-vp-obj: nth($pg-bps, $i);
     $pg-viewport: nth($pg-vp-obj, 1);
