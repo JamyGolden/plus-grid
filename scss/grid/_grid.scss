@@ -6,7 +6,11 @@
 //
 // A typical example may look like this:
 // .pg-sm-4-12
-// It's easy to ready as "PlusGrid small 4/12" or "PlusGrid small four-twelfth"
+// It's easy to ready as "PlusGrid small 4/12" or
+// "PlusGrid small four-twelfth"
+//
+// Note: The 3 identical loops used in this file aren't redundant, the 3 are
+// necessary for specificity
 // ==========================================================================
 
 // PlusGrid clearfix
