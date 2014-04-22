@@ -143,16 +143,82 @@
     } // @for
 }
 
+
 // Modifiers
 // ==========================================================================
 
+// Third viewport loop
+// Create modifiers to dynamically modify gutter size
+@each $pg-viewport in $pg-bp-list {
+
+    // List length
+    $length: length($pg-bp-list);
+
+    // Current item index in list
+    $index: index($pg-bp-list, $pg-viewport);
+
+    // Index of next item
+    $nextItem: $index + 1;
+
+    // For each gutter size in list.
+    // (List defined in config file)
+    @each $pg-gutter-size in $pg-gutter-size-list {
+
+        .pg-row--#{$pg-viewport}-gutter-#{$pg-gutter-size} {
+
+            & > [class*="pg-#{$pg-viewport}-"],
+            & > [class*=" pg-#{$pg-viewport}-"] {
+                @include pg-bp($pg-viewport) {
+
+                    // Multiply by 1px to return pixels
+                    padding-left: $pg-gutter-size * 1px;
+                    padding-right: $pg-gutter-size * 1px;
+                    padding-top: $pg-gutter-size * 1px;
+                    padding-bottom: $pg-gutter-size * 1px;
+
+                }
+            }
+
+            // Provided there is a next item
+            @if $length - $nextItem > -1 {
+                // Ensure the padding "filters" up to larger viewports.
+                // Unfortunately this can't natively filter to larger
+                // viewports so this must be manually created.
+
+                // Run through larger viewport cells and make sure that
+                // The CSS is applied to them
+                @for $i from $nextItem through length($pg-bp-list) {
+                    $pg-greater-viewport: nth($pg-bp-list, $i);
+
+                    & > [class*="pg-#{$pg-greater-viewport}-"],
+                    & > [class*=" pg-#{$pg-greater-viewport}-"] {
+                        @include pg-bp($pg-viewport) {
+
+                            // Multiply by 1px to return pixels
+                            padding-left: $pg-gutter-size * 1px;
+                            padding-right: $pg-gutter-size * 1px;
+                            padding-top: $pg-gutter-size * 1px;
+                            padding-bottom: $pg-gutter-size * 1px;
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+// Remove gutters
 .pg-row--no-gutter, // Remove gutter
 .pg-row--no-h-gutter { // Remove horizontal gutter
     margin-left: 0;
     margin-right: 0;
 }
 
-// Third viewport loop
+// Fourth viewport loop
+// Remove specific gutters
 @for $i from 1 through length($pg-bps) {
     $pg-vp-obj: nth($pg-bps, $i);
     $pg-viewport: nth($pg-vp-obj, 1);

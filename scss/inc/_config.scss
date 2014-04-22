@@ -20,6 +20,8 @@ $pg-xs-v-gutter: 10px; // Allows for thinner XS gutter
 
 $pg-column-total: 16; // Total number columns available
 
+$pg-gutter-size-list: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+
 // Breakpoints
 // $bps is an object containing a breakpoint list:
 // <Name> <Width> <Horizontal-gutter> <Vertical-gutter>
@@ -28,3 +30,22 @@ $pg-bps: 'xs' 0  $pg-xs-h-gutter $pg-xs-v-gutter,
          'sm' 768px $pg-sm-h-gutter $pg-sm-v-gutter,
          'md' 992px $pg-md-h-gutter $pg-md-v-gutter,
          'lg' 1200px $pg-lg-h-gutter $pg-lg-v-gutter;
+
+// Define breakpoint name list to give global scope
+$pg-bp-list: null;
+
+// Create breakpoint name list
+@for $i from 1 through length($pg-bps) {
+
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
+
+    // Replace the previously defined var if this is the first item in list
+    @if $i == 1 {
+        $pg-bp-list: $pg-viewport;
+    }
+    @else {
+        $pg-bp-list: append($pg-bp-list, $pg-viewport);
+    }
+
+}
