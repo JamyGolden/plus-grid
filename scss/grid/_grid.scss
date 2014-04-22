@@ -88,7 +88,8 @@
     // as modifiers
     // ==========================================================================
     .pg-#{$pg-viewport}-col, // IE7 Fix
-    [class*="pg-#{$pg-viewport}-"] {
+    [class^="pg-#{$pg-viewport}-"],
+    [class*=" pg-#{$pg-viewport}-"] {
         @include box-sizing(border-box);
         float: left;
 
@@ -166,7 +167,7 @@
 
         .pg-row--#{$pg-viewport}-gutter-#{$pg-gutter-size} {
 
-            & > [class*="pg-#{$pg-viewport}-"],
+            & > [class^="pg-#{$pg-viewport}-"],
             & > [class*=" pg-#{$pg-viewport}-"] {
                 @include pg-bp($pg-viewport) {
 
@@ -225,7 +226,7 @@
 
     // Remove gutter
     .pg-row--no-gutter {
-        & > [class*="pg-#{$pg-viewport}-"],
+        & > [class^="pg-#{$pg-viewport}-"],
         & > [class*=" pg-#{$pg-viewport}-"] {
             padding: 0;
         }
@@ -238,7 +239,7 @@
 
     // Remove horizontal gutter
     .pg-row--no-h-gutter {
-        & > [class*="pg-#{$pg-viewport}-"],
+        & > [class^="pg-#{$pg-viewport}-"],
         & > [class*=" pg-#{$pg-viewport}-"] {
             padding-left: 0;
             padding-right: 0;
@@ -253,7 +254,7 @@
 
     // Remove vertical gutter
     .pg-row--no-v-gutter {
-        & > [class*="pg-#{$pg-viewport}-"],
+        & > [class^="pg-#{$pg-viewport}-"],
         & > [class*=" pg-#{$pg-viewport}-"] {
             padding-top: 0;
             padding-bottom: 0;
