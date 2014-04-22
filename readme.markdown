@@ -7,6 +7,7 @@ A(nother) flexible, simple and responsive CSS grid framework
 * Mobile first
 * Nestable
 * No grid column limit
+* Dynamic BEM modifier gutter sizing
 * Classes can be stacked for different viewport grid structures
 * Developed using Sass (with Compass)
 * Easiliy customizable
@@ -81,6 +82,7 @@ Since the `box-sizing` CSS property is used, IE7 won't support any gutters. In o
 MIT
 
 ## Changelog:
+* 1.0.8 - Added dynamic gutter sizing modifier class functionality. 22-04-2014
 * 1.0.2 - Fixed IE7 class name bug
 * 1.0.1 - Function/var/mixin internal fixups. 18-02-2014
 * 1.0.0 - V1 release. 17-02-2014
