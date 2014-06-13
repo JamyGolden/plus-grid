@@ -166,6 +166,8 @@
     @each $pg-gutter-size in $pg-gutter-size-list {
 
         .pg-row--#{$pg-viewport}-gutter-#{$pg-gutter-size} {
+            margin-left: -$pg-gutter-size;
+            margin-right: -$pg-gutter-size;
 
             & > [class^="pg-#{$pg-viewport}-"],
             & > [class*=" pg-#{$pg-viewport}-"] {
