@@ -85,15 +85,25 @@ On a 3 column grid, for example, a very tall middle cell will cause the whole "r
 </div>
 
 <div class="pg-row pg-row--hard-row">
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
-    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3">...</div>
+    <div class="pg-md-1-3">...</div>
+    <div class="pg-md-1-3">...</div>
+    <div class="pg-md-1-3">...</div>
+    <div class="pg-md-1-3">...</div>
+    <div class="pg-md-1-3">...</div>
+    <div class="pg-md-1-3">...</div>
 </div>
 ```
+Note: This modifier does not support the stacking of cell classes, for example, the below `hard-row` would NOT take affect:
+```html
+<div class="pg-row pg-row--hard-row">
+    <div class="pg-xs-1-2 pg-md-1-3">...</div>
+    <div class="pg-xs-1-2 pg-md-1-3">...</div>
+    <div class="pg-xs-1-2 pg-md-1-3">...</div>
+    <div class="pg-xs-1-2 pg-md-1-3">...</div>
+</div>
+```
+
 ## Browser support
 IE8+ and modern browsers.
 The `.pg-row--hard-clear` modifier class isn't supported in IE8 due to `nth-child` being used.

@@ -18,7 +18,7 @@ $pg-md-v-gutter: 10px; // Allows for thinner MD gutter
 $pg-sm-v-gutter: 10px; // Allows for thinner SM gutter
 $pg-xs-v-gutter: 10px; // Allows for thinner XS gutter
 
-$pg-column-total: 16; // Total number columns available
+$pg-column-total: 12; // Total number columns available
 
 $pg-gutter-size-list: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
 
@@ -49,3 +49,6 @@ $pg-bp-list: null;
     }
 
 }
+
+// Modifier support
+$ph-mod-hard-row: true;
