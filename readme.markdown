@@ -66,8 +66,37 @@ If I wanted to create a grid which was:
 ## Different grids based on viewport
 The grid classes work using the mobile first methadology, meaning `.pg-xs-1-2` will be a 50% cell/column all the way from xs to lg. Where as `.pg-md-1-3` will be a 33.33% cell/column from md to lg. Various PlusGrid cell/column classes can be used on an element and the "larger" viewport classes will take precidence over the "smaller" viewport classes. This allows for developers to completely change the grid structure layout based on the viewport.
 
+## Modifier class explanations
+### `.pg-row--hard-row`
+On a 3 column grid, for example, a very tall middle cell will cause the whole "row" grow so that the next row starts on a new baseline. This ONLY works if the cells numerator is 1 and they all have the same denominator. Below are examples that would work correctly:
+```html
+<div class="pg-row pg-row--hard-row">
+    <div class="pg-xs-1-2">...</div>
+    <div class="pg-xs-1-2">...</div>
+    <div class="pg-xs-1-2">...</div>
+    <div class="pg-xs-1-2">...</div>
+</div>
+
+<div class="pg-row pg-row--hard-row">
+    <div class="pg-sm-1-3">...</div>
+    <div class="pg-sm-1-3">...</div>
+    <div class="pg-sm-1-3">...</div>
+    <div class="pg-sm-1-3">...</div>
+</div>
+
+<div class="pg-row pg-row--hard-row">
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+    <div class="pg-md-1-3  pg-lg-1-4">...</div>
+</div>
+```
 ## Browser support
 IE8+ and modern browsers.
+The `.pg-row--hard-clear` modifier class isn't supported in IE8 due to `nth-child` being used.
 
 Since the `box-sizing` CSS property is used, IE7 won't support any gutters. In order for the grids to work correctly in IE7, all horizontal gutters should be set to 0 within the _config.scss file. In addition to this, all cells/columns should get a class of `.pg-<VIEWPORT>-col`. For example, support would be added to the above 3 column grid example by modifying it to be the following:
 ```html
@@ -82,6 +111,7 @@ Since the `box-sizing` CSS property is used, IE7 won't support any gutters. In o
 MIT
 
 ## Changelog:
+* 1.1.1 - Added a new `hard-clear` modifier class. 15-01-2015
 * 1.0.8 - Added dynamic gutter sizing modifier class functionality. 22-04-2014
 * 1.0.2 - Fixed IE7 class name bug
 * 1.0.1 - Function/var/mixin internal fixups. 18-02-2014

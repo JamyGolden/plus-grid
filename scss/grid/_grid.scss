@@ -138,6 +138,22 @@
                         padding-bottom: pg-gutter($pg-viewport, false);
                     }
                 }
+
+                // Hard Row
+                // .pg-row--hard-row adds support for each row to start at the
+                // same baseline. This ONLY works if all cells begin with a 1
+                // and they have the same denoimantor.
+                // eg. all 1/4 or all 1/3 or all 1/4, etc
+                // eg. .pg-sm-1-4, .pg-sm-1-3, .pg-md-1-5, etc
+                @if $col == 1 {
+                    .pg-row--hard-row &:nth-child(#{$pg-columns}n+1) { // reset
+                        clear: left;
+                    }
+
+                    .pg-row--hard-row &:first-child { // reset
+                        clear: none;
+                    }
+                }
             }
         }
 
