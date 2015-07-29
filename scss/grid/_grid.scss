@@ -90,7 +90,7 @@
     .pg-#{$pg-viewport}-col, // IE7 Fix
     [class^="pg-#{$pg-viewport}-"],
     [class*=" pg-#{$pg-viewport}-"] {
-        @include box-sizing(border-box);
+        box-sizing: border-box;
         float: left;
 
         // Vertical
