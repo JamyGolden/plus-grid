@@ -24,20 +24,18 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: ['scss/main.scss', 'scss/**/*.scss'],
-                tasks: ['version', 'compass']
+                tasks: ['version', 'sass']
             },
         },
 
-        compass: {
-            dist: {
-                options: { // Target options
-                    specify: 'scss/main.scss',
+        sass: {
+            prod: {
+                options: {
                     banner: '<%= banner %>',
-                    relativeAssets: true,
-                    cssDir: 'css',
-                    sassDir: 'scss',
-                    imagesDir: 'img',
                     outputStyle: 'compressed'
+                },
+                files: {
+                    'css/main.css': 'scss/main.scss'
                 }
             }
         },
@@ -54,9 +52,9 @@ module.exports = function(grunt) {
 
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-version');
 
     // Register tasks for the `grunt` terminal command
-    grunt.registerTask('default', ['watch', 'compass', 'version']);
+    grunt.registerTask('default', ['watch', 'sass', 'version']);
 };
