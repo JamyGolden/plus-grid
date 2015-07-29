@@ -239,50 +239,52 @@
 
 // Fourth viewport loop
 // Remove specific gutters
-@for $i from 1 through length($pg-bps) {
-    $pg-vp-obj: nth($pg-bps, $i);
-    $pg-viewport: nth($pg-vp-obj, 1);
+@if ($pg-support-gutter) {
+    @for $i from 1 through length($pg-bps) {
+        $pg-vp-obj: nth($pg-bps, $i);
+        $pg-viewport: nth($pg-vp-obj, 1);
 
-    // Remove gutter
-    .pg-row--no-gutter {
-        & > [class^="pg-#{$pg-viewport}-"],
-        & > [class*=" pg-#{$pg-viewport}-"] {
-            padding: 0;
+        // Remove gutter
+        .pg-row--no-gutter {
+            & > [class^="pg-#{$pg-viewport}-"],
+            & > [class*=" pg-#{$pg-viewport}-"] {
+                padding: 0;
+            }
+
+            // IE7 fix
+            & > .pg-#{$pg-viewport}-col {
+                padding: 0;
+            }
         }
 
-        // IE7 fix
-        & > .pg-#{$pg-viewport}-col {
-            padding: 0;
-        }
-    }
+        // Remove horizontal gutter
+        .pg-row--no-h-gutter {
+            & > [class^="pg-#{$pg-viewport}-"],
+            & > [class*=" pg-#{$pg-viewport}-"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
 
-    // Remove horizontal gutter
-    .pg-row--no-h-gutter {
-        & > [class^="pg-#{$pg-viewport}-"],
-        & > [class*=" pg-#{$pg-viewport}-"] {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        // IE7 fix
-        & > .pg-#{$pg-viewport}-col {
-            padding-left: 0;
-            padding-right: 0;
-        }
-    }
-
-    // Remove vertical gutter
-    .pg-row--no-v-gutter {
-        & > [class^="pg-#{$pg-viewport}-"],
-        & > [class*=" pg-#{$pg-viewport}-"] {
-            padding-top: 0;
-            padding-bottom: 0;
+            // IE7 fix
+            & > .pg-#{$pg-viewport}-col {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
 
-        // IE7 fix
-        & > .pg-#{$pg-viewport}-col {
-            padding-top: 0;
-            padding-bottom: 0;
+        // Remove vertical gutter
+        .pg-row--no-v-gutter {
+            & > [class^="pg-#{$pg-viewport}-"],
+            & > [class*=" pg-#{$pg-viewport}-"] {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            // IE7 fix
+            & > .pg-#{$pg-viewport}-col {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
         }
     }
 }

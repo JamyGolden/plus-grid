@@ -2,6 +2,12 @@
 // Config File
 // ==========================================================================
 
+// Support
+// Add or remove certain parts of plusgrid
+// ==========================================================================
+$pg-support-gutter: true;
+$pg-support-push-pull: false;
+
 // Horizontal Gutter
 // Naming convention: <PlusGrid>-<Size>-<Horizontal>-<Gutter>
 // ==========================================================================
@@ -20,7 +26,7 @@ $pg-xs-v-gutter: 10px; // Allows for thinner XS gutter
 
 $pg-column-total: 12; // Total number columns available
 
-$pg-gutter-size-list: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+$pg-gutter-size-list: 5, 10, 15, 20, 30, 40, 50;
 
 // Breakpoints
 // $bps is an object containing a breakpoint list:
