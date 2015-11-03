@@ -15,6 +15,18 @@ module.exports = function(grunt) {
             '* <%= pkg.homepage %>\n' +
             '*/',
 
+        usebanner: {
+            dist: {
+                options: {
+                    position: 'top',
+                    banner: '<%= banner %>'
+                },
+                files: {
+                    src: [ 'css/main.css']
+                }
+            }
+        },
+
         watch: {
             options: {
                 dateFormat: function(time) {
@@ -54,7 +66,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-version');
+    grunt.loadNpmTasks('grunt-banner');
 
     // Register tasks for the `grunt` terminal command
-    grunt.registerTask('default', ['watch', 'sass', 'version']);
+    grunt.registerTask('default', ['sass', 'version', 'usebanner', 'watch']);
 };
